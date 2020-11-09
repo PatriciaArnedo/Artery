@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_09_184629) do
-
-  create_table "carts", force: :cascade do |t|
-    t.integer "user_id"
-    t.boolean "completed"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-ActiveRecord::Schema.define(version: 2020_11_09_192311) do
+ActiveRecord::Schema.define(version: 2020_11_09_215653) do
 
   create_table "artworks", force: :cascade do |t|
     t.integer "artist_id"
@@ -27,6 +20,29 @@ ActiveRecord::Schema.define(version: 2020_11_09_192311) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "img_url"
+  end
+
+  create_table "cart_arts", force: :cascade do |t|
+    t.integer "cart_id"
+    t.integer "artwork_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.integer "user_id"
+    t.boolean "completed"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "password"
+    t.integer "zip_code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

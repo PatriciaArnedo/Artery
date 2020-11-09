@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   resources :cart_arts
   resources :carts, only: [:show, :destory]
   resources :artworks
