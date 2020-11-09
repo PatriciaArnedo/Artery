@@ -1,0 +1,2 @@
+class CartArt < ApplicationRecord
+end
