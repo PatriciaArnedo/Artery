@@ -1,6 +1,7 @@
 <h1><%= @artist.name %></h1>
 
-Location: <%= @artist.location.city_state %>
+<p>Location: <%= @artist.location.city_state %></p>
+<p>Bio: <%= @artist.bio %></p>
 
 <h3>Artworks</h3>
 <ul>
@@ -11,5 +12,6 @@ Location: <%= @artist.location.city_state %>
 <br>
 <br>
 
+<p><%= link_to "Add a New Artwork", new_artwork_path %></p>
 <p><%= link_to "Back to All Artists", artists_path %></p>
 <p><%= link_to "Edit this Artist", edit_artist_path %></p>
