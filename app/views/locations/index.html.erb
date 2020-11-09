@@ -1,0 +1,13 @@
+<h1>Available Locations</h1>
+
+<ul>
+<% @locations.each do |location| %>
+    <li><%= link_to location.city_state, location_path(location) %>
+<% end%>
+</ul>
+<br>
+<br>
+
+<p><%= link_to "Add a New Location", new_location_path %></p>
+<p><%= link_to "Artists", artists_path %></p>
+<p><%= link_to "Artworks", artworks_path %></p>

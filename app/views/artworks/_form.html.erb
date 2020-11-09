@@ -1,0 +1,11 @@
+<%= form_for @artwork do |f| %>
+<%= f.label :name %><br>
+<%= f.text_field :name %><br>
+<%= f.label :medium %><br>
+<%= f.text_field :medium %><br>
+<%= f.label :size %><br>
+<%= f.text_field :size %><br>
+<%= f.label "Artist" %><br>
+<%= f.collection_select(:artist_id, Artist.all, :id, :name) %><br>
+<%= f.submit %>
+<% end%>
