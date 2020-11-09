@@ -16,7 +16,7 @@ class ArtworksController < ApplicationController
     def create 
         @artwork = Artwork.new(artwork_params)
         @artwork.save
-        redirect_to artwork_path(@artwork)
+        redirect_to artist_path(@artwork.artist)
     end
   
     def edit
