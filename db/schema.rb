@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_09_215653) do
 ActiveRecord::Schema.define(version: 2020_11_09_222636) do
 
   create_table "artists", force: :cascade do |t|
@@ -31,7 +30,6 @@ ActiveRecord::Schema.define(version: 2020_11_09_222636) do
     t.string "img_url"
   end
 
-<<<<<<< HEAD
   create_table "cart_arts", force: :cascade do |t|
     t.integer "cart_id"
     t.integer "artwork_id"
@@ -39,8 +37,6 @@ ActiveRecord::Schema.define(version: 2020_11_09_222636) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-=======
->>>>>>> patricia
   create_table "carts", force: :cascade do |t|
     t.integer "user_id"
     t.boolean "completed"
@@ -48,17 +44,19 @@ ActiveRecord::Schema.define(version: 2020_11_09_222636) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-<<<<<<< HEAD
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "email"
-    t.string "password"
-=======
   create_table "locations", force: :cascade do |t|
     t.string "city_state"
     t.float "latitude"
     t.float "longitude"
->>>>>>> patricia
+    t.integer "zip_code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "password"
     t.integer "zip_code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
