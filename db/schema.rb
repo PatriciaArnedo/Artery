@@ -17,6 +17,16 @@ ActiveRecord::Schema.define(version: 2020_11_09_184629) do
     t.boolean "completed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+ActiveRecord::Schema.define(version: 2020_11_09_192311) do
+
+  create_table "artworks", force: :cascade do |t|
+    t.integer "artist_id"
+    t.string "name"
+    t.string "medium"
+    t.string "size"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "img_url"
   end
 
 end
