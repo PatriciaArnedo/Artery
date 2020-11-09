@@ -1,0 +1,7 @@
+<h1>Shop Artworks</h1>
+
+<% @artworks.each do |artwork| %>
+<%= link_to artwork.name, artwork_path(artwork) %>
+<% end%>
+
+<p><%= link_to "Add a New Artwork", new_artwork_path %></p>
