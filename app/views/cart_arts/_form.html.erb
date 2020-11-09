@@ -1,0 +1,6 @@
+<%= form_for(@cart_art) do |f| %>
+    Cart: <%= f.collection_select :cart_id, Cart.all, :id %><br><br>
+    Artwork: <%= f.collection_select :artwork_id, Artwork.all.all, :id, :name %><br><br>
+
+    <%= f.submit %>
+<% end %>
