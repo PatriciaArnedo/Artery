@@ -4,5 +4,14 @@
  <br>
  <p>Zip Code: <%= @location.zip_code %></p>
 
+ <h3>Artists in This City</h3>
+<ul>
+<% @location.artists.each do |artist|%>
+    <li><%= link_to artist.name, artist_path(artist)%>
+<% end%>
+</ul>
+<br>
+<br>
+
 <p><%= link_to "Back to All Locations", locations_path %></p>
 <p><%= link_to "Edit this Location", edit_location_path %></p>
