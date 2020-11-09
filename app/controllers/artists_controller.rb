@@ -2,7 +2,7 @@ class ArtistsController < ApplicationController
     before_action :find_artist, only: [:show, :edit, :update, :delete]
 
     def index
-        @artists = artist.all
+        @artists = Artist.all
     end
   
     def show

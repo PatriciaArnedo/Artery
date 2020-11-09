@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :locations
   get 'artist/new'
   get 'artist/index'
   get 'artist/show'

@@ -1,0 +1,7 @@
+<%= form_for @artist do |f| %>
+<%= f.label "Name: " %><br>
+<%= f.text_field :name %><br>
+<%= f.label "Location: " %><br>
+<%= f.collection_select(:location_id, Location.all, :id, :name) %><br>
+<%= f.submit %>
+<% end%>
