@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'artist/new'
+  get 'artist/index'
+  get 'artist/show'
+  get 'artist/edit'
   resources :artists
   resources :carts, only: [:show, :destory]
   resources :artworks
