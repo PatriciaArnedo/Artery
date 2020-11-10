@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id
             redirect_to artworks_path
         else
-            flash[:errors] = "Username or Password is incorrect, please try again!"
+            flash[:error] = "Username or Password is incorrect, please try again!"
             redirect_to new_sign_in_path
         end
     end

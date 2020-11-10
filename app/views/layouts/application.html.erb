@@ -16,7 +16,7 @@
       <li><%= link_to "Create An Artist", new_artist_path %></li>
 
       <% if @current_user %>
-        <li class="right">Welcome to Artery, <%= @current_user.username %>!</li>
+        <li class="right">Welcome <%= @current_user.username %>!</li>
         <li class="right"><%= link_to "Log Out", logout_path, method: :delete %></li>
       <% else %>
         <li class="right"><%= link_to "Login", new_sign_in_path %></li>
