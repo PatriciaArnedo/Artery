@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :users
   resources :cart_arts
-  resources :carts, only: [:show, :destory]
+  resources :carts #, only: [:show, :destory, :new, :create, :delete]
   resources :locations
   resources :artists
   resources :artworks

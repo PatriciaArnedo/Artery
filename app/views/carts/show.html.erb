@@ -1,5 +1,7 @@
 <h1>Cart:</h1>
 
 
+Artwork Name: <%= @cart.artwork.name %><br>
+Cart Name: <%= @cart.user.username %><br>
 
 <%= link_to "Delete", cart_path(@cart), :confirm => "Are you sure?", :method => :delete %>

@@ -1,5 +1,5 @@
 class ArtworksController < ApplicationController
-    before_action :find_artwork, only: [:show, :edit, :update, :delete]
+    before_action :find_artwork, only: [:show, :edit, :update, :destroy]
 
     def index
         @artworks = Artwork.all
@@ -15,8 +15,12 @@ class ArtworksController < ApplicationController
 
     def create 
         @artwork = Artwork.new(artwork_params)
-        @artwork.save
-        redirect_to artist_path(@artwork.artist)
+        if @artwork.save
+            redirect_to artist_path(@artwork.artist)
+        else 
+            flash[:errors] = @artwork.errors.full_messages
+            redirect_to new_artwork_path
+        end
     end
   
     def edit
@@ -24,9 +28,19 @@ class ArtworksController < ApplicationController
     end
 
     def update 
-        @artwork.update(artwork_params)
-        redirect_to artwork_path(@artwork)
+        if @artwork.update(artwork_params)
+            redirect_to artwork_path(@artwork)
+        else 
+            flash[:errors] = @artwork.errors.full_messages
+            redirect_to edit_artwork_path
+        end
     end
+
+    def destroy
+        @artwork.destroy
+        redirect_to artworks_path
+    end
+
 
     private
 

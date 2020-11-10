@@ -14,8 +14,13 @@ class UsersController < ApplicationController
     end
     
     def create
-        @user = User.create!(user_params)
-        redirect_to user_path(@user)
+        @user = User.create(user_params)
+        if @user.valid?
+            redirect_to user_path(@user)
+        else
+            flash[:errors] = @user.errors.full_messages
+            redirect_to new_user_path
+        end
     end
 
     def edit
@@ -25,15 +30,17 @@ class UsersController < ApplicationController
         if @user.update(user_params)
             redirect_to user_path(@user)
         else
-            flash[:user_error] = @user.errors.full_messages
+            flash[:errors] = @user.errors.full_messages
             redirect_to edit_user_path
         end
     end
 
+
+
     private
 
     def find_user
-        @user = User.find(params[:id])
+        @user = User.all.find(params[:id])
     end
 
     def user_params

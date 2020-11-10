@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-    before_action :find_location, only: [:show, :edit, :update, :delete]
+    before_action :find_location, only: [:show, :edit, :update, :destroy]
 
     def index
         @locations = Location.all
@@ -15,8 +15,12 @@ class LocationsController < ApplicationController
 
     def create 
         @location = Location.new(location_params)
-        @location.save
-        redirect_to location_path(@location)
+        if @location.save
+            redirect_to location_path(@location)
+        else 
+            flash[:errors] = @location.errors.full_messages
+            redirect_to new_location_path
+        end
     end
   
     def edit
@@ -24,9 +28,19 @@ class LocationsController < ApplicationController
     end
 
     def update 
-        @location.update(location_params)
-        redirect_to location_path(@location)
+        if @location.update(location_params)
+            redirect_to location_path(@location)
+        else 
+            flash[:errors] = @location.errors.full_messages
+            redirect_to edit_location_path
+        end
     end
+
+    def destroy
+        @location.destroy
+        redirect_to locations_path
+    end
+
 
     private
 
