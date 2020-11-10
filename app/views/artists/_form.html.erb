@@ -5,11 +5,17 @@
 <% end%>
 
 <%= form_for @artist do |f| %>
-<%= f.label "Name: " %><br>
-<%= f.text_field :name %><br>
-<%= f.label "Location: " %><br>
-<%= f.collection_select(:location_id, Location.all, :id, :city_state) %><br>
-<%= f.label "Bio: " %><br>
-<%= f.text_area :bio %><br>
-<%= f.submit %>
+    <div class="input-field col s6">
+        <%= f.label "Name: " %><br>
+        <%= f.text_field :name %><br>
+    </div>
+    <div class="input-field col s6">
+        <%= f.label "Location: " %><br>
+        <%= f.collection_select(:location_id, Location.all, :id, :city_state) %><br>
+    </div>
+    <div class="input-field col s6">
+        <%= f.label "Bio: " %><br>
+        <%= f.text_area :bio %><br>
+    </div>
+    <%= f.submit %>
 <% end%>

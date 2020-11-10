@@ -5,9 +5,15 @@
 <% end%>
 
 <%= form_for @location do |f| %>
-<%= f.label "City, State: " %><br>
-<%= f.text_field :city_state %><br>
-<%= f.label "Zip Code: " %><br>
-<%= f.number_field :zip_code %><br>
-<%= f.submit %>
+<div class="container">
+    <div class="input-field col s6">
+        <%= f.label "City, State: " %><br>
+        <%= f.text_field :city_state %><br>
+    </div>
+    <div class="input-field col s6">
+        <%= f.label "Zip Code: " %><br>
+        <%= f.number_field :zip_code %><br>
+    </div>
+    <%= f.submit %>
+</div>
 <% end%>

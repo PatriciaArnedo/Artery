@@ -1,7 +1,13 @@
 <%= form_for @cart do |f| %>
-<%= f.label "User: " %><br>
-<%= f.collection_select(:user_id, User.all, :id, :username) %><br><br>
-<%= f.label "Artwork: " %><br>
-<%= f.collection_select(:artwork_id, Artwork.all, :id, :name) %><br><br>
-<%= f.submit "Add to Cart"%>
+    <div class="container">
+        <div class="input-field col s6">
+            <%= f.label "User: " %><br>
+            <%= f.collection_select(:user_id, User.all, :id, :username) %><br><br>
+        </div>
+        <div class="input-field col s6">
+            <%= f.label "Artwork: " %><br>
+            <%= f.collection_select(:artwork_id, Artwork.all, :id, :name) %><br><br>
+        </div>
+        <%= f.submit "Add to Cart"%>
+    </div>
 <% end%>
