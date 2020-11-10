@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+    skip_before_action :require_login, only: [:new, :create]
     before_action :find_user, only: [:show, :edit, :update]
 
     def index
@@ -16,6 +17,7 @@ class UsersController < ApplicationController
     def create
         @user = User.create(user_params)
         if @user.valid?
+            session[:user_id] = @user.id
             redirect_to user_path(@user)
         else
             flash[:errors] = @user.errors.full_messages
@@ -40,7 +42,7 @@ class UsersController < ApplicationController
     private
 
     def find_user
-        @user = User.all.find(params[:id])
+        @user = User.find(params[:id])
     end
 
     def user_params
