@@ -21,56 +21,57 @@
 #     Location.create(city_state: Faker::Address.city, latitude: Faker::Address.latitude, longitude: Faker::Address.longitude, zip_code: Faker::Address.zip_code)
 # end
 
+
 artists = [
 
     {
         name: "Ines Longevial",
-        location_id: 12,
+        location_id: 6,
         bio: "Figurative painter born in Spain"
     },
     {
        name: "Janice Sung",
-       location_id: 14,
+       location_id: 7,
        bio: "Art director designer and illustrator based out of San Diego"
     },
     {
       name: "Veronica Steiner",
-      location_id: 11,
+      location_id: 4,
       bio: "oil, acrylic & watercolor illustrator, nature lover, surrealist heart"
     },
     {
       name: "Sai Nitivoranant",
-      location_id: 13,
+      location_id: 5,
       bio: "Thai born illustrator living in Los Angeles"
     },
     {
       name: "Morgan Winter",
-      location_id: 11,
+      location_id: 4,
       bio: "Abstract artist"
     },
     {
       name: "Jeff Manning",
-      location_id: 14,
+      location_id: 7,
       bio: "Digital Artist, storytelling through visuals"
     },
     {
        name: "Henn Kim",
-       location_id: 12,
+       location_id: 6,
        bio: "Poetic artist working in black and white"
     },
     {
       name: "WanJin Gim",
-      location_id: 13,
+      location_id: 5,
       bio: "Fine Artist born in Seoul, South Korea"
     },
     {
       name: "Tua Marika",
-      location_id: 11,
+      location_id: 4,
       bio: "Film Photographer"
     },
     {
       name: "Mer Young",
-      location_id: 14,
+      location_id: 7,
       bio: "Indigenous Collage Artist"
     }
 ]
