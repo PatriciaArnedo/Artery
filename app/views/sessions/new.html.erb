@@ -1,7 +1,4 @@
 <div class="container"><h1>Log In</h1></div>
-<% if flash[:login_error] %>
-       <p style = 'color:red;'>  <%= flash[:login_error]%>  </p>
-<% end%>
 
 <%= form_for :session, url: sign_in_path do |f| %>
     <div class="container">
