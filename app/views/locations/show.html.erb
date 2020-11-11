@@ -1,6 +1,13 @@
-<h1><%= @location.city_state %></h1>
-
- Insert Map of Location Here
+<div class="container"><h1><%= @location.city_state %></h1></div>
+<!--<div class="container">
+    <iframe
+    width="600"
+    height="450"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAi9n-U354Bi95URpNNUo29RQTk_h4T9Yg
+        &q=Space+Needle,Seattle+WA" allowfullscreen>
+    </iframe>
+</div> -->
  <br>
  <p>Zip Code: <%= @location.zip_code %></p>
 
@@ -15,6 +22,8 @@
 
 <%= button_to "Delete Location", location_path, method: :delete %>
 <br>
-<p><%= link_to "Back to All Locations", locations_path %></p>
-<p><%= link_to "Edit this Location", edit_location_path %></p>
-<p><%= link_to "Add a New Artist", new_artist_path %></p>
+<div class="container">
+    <p><%= link_to "Back to All Locations", locations_path %></p>
+    <p><%= link_to "Edit this Location", edit_location_path %></p>
+    <p><%= link_to "Add a New Artist", new_artist_path %></p>
+</div>
