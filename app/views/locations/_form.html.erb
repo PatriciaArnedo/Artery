@@ -4,16 +4,22 @@
     <% end%>
 <% end%>
 
-<%= form_for @location do |f| %>
-<div class="container">
-    <div class="input-field col s6">
-        <%= f.label "City, State: " %><br>
-        <%= f.text_field :city_state %><br>
+<%= form_for(@location) do |f| %>
+    <div class="container">
+        <div class="row">
+            <div class="col s6 offset-s3 z-depth-3" id="panel">
+            <h5  id="register">Location</h5>
+                <div class="input-field" id="city_state">
+                    <%= f.label :city_state %>
+                    <%= f.text_field :city_state %>
+                </div>
+                <div class="input-field" id="zip_code">
+                    <%= f.label :zip_code %>
+                    <%= f.number_field :zip_code %>
+                </div>
+                <a class="yellow darken-1 waves-effect waves-light btn" id="registerbtn"><%= f.submit "Create Location" %></a>
+            </div>
+        </div>
     </div>
-    <div class="input-field col s6">
-        <%= f.label "Zip Code: " %><br>
-        <%= f.number_field :zip_code %><br>
-    </div>
-    <%= f.submit %>
-</div>
-<% end%>
+<% end %>
+  
