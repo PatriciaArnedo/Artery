@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <%if flash[:errors] %>
     <% flash[:errors].each do |error|%>
         <p style = 'color:red;'>  <% error %>  </p> 
@@ -14,6 +15,13 @@
     <% end %>
 </div>
 >>>>>>> shevaughn-test
+=======
+<% if flash[:errors] %>
+    <% flash[:errors].each do |err| %>
+        <p style = 'color:red;'><%= err %></p>
+    <% end %>
+<% end %>
+>>>>>>> 79a08ed2d22340f82c25be170b9d247f89b26994
 
 <%= form_for(@user) do |f| %>
     <div class="container">
