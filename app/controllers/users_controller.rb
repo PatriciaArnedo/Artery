@@ -18,7 +18,7 @@ class UsersController < ApplicationController
         @user = User.create(user_params)
         if @user.valid?
             session[:user_id] = @user.id
-            redirect_to user_path(@user)
+            redirect_to locations_path
         else
             flash[:errors] = @user.errors.full_messages
             redirect_to new_user_path
@@ -46,6 +46,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-        params.require(:user).permit(:username, :email, :password, :zip_code)
+        params.require(:user).permit(:username, :email, :password, :password_confirmation, :zip_code)
     end
 end
