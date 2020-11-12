@@ -9,10 +9,17 @@ class CartsController < ApplicationController
     end
 
     def create
-        @cart = Cart.create(cart_params)
-        redirect_to user_path(@cart.user)
+        @cart = Cart.new#(cart_params)
+        @cart.user_id = @current_user.id
+        @cart.artwork_id = (params[:id])
+        if @cart.save
+            redirect_to user_path(@cart.user)
+        else  
+            flash[:cart_error] = "This item couldn't be added to your cart."
+            redirect_back fallback_location: artworks_path
+        end
     end
-
+    
     def destroy
         @cart.destroy
         redirect_back fallback_location: users_path
@@ -24,8 +31,8 @@ class CartsController < ApplicationController
         @cart = Cart.all.find(params[:id])
     end
 
-    def cart_params
-        params.require(:cart).permit(:user_id, :artwork_id)
-    end
+    # def cart_params
+    #     params.permit(:user_id, :artwork_id)
+    # end
 end
 

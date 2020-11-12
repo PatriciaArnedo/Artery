@@ -1,13 +1,17 @@
 class UsersController < ApplicationController
 
-    before_action :find_user, only: [:show, :edit, :update]
+    before_action :find_user, only: [:show, :index, :edit, :update]
     skip_before_action :require_login, only: [:new, :create]
 
     def index
-        @users = User.all
+        #we are using this as a user account page 
+        #@user = @current_user
     end
 
     def show
+        #we are using this as a cart page - it contains the user's cart instances
+        #@user = @current_user
+        render :show
     end
 
     def new
@@ -26,11 +30,14 @@ class UsersController < ApplicationController
     end
 
     def edit
+        
+        render :edit
     end
 
     def update
+        #@user= @current_user
         if @user.update(user_params)
-            redirect_to user_path(@user)
+            redirect_to users_path
         else
             flash[:errors] = @user.errors.full_messages
             redirect_to edit_user_path
@@ -42,7 +49,7 @@ class UsersController < ApplicationController
     private
 
     def find_user
-        @user = User.find(params[:id])
+        @user = @current_user
     end
 
     def user_params

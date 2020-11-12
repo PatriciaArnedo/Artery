@@ -1,3 +1,8 @@
+<div class="container">
+<% if flash[:cart_error] %>
+    <p style= color:red;><%= flash[:cart_error] %></p>
+<% end%>
+</div>
 <div class="container"><h1><%= @artwork.name %></h1><div>
 
 
@@ -12,10 +17,10 @@
                 <p><%= @artwork.name %> by <%= @artwork.artist.name %></p>
                 <p>Medium: <%= @artwork.medium %></p>
                 <p>Size: <%= @artwork.size %></p>
+                <p>Price: $<%= @artwork.price %>0</p>
             </div>
             <div class="card-action">
-                <a><%= link_to "Add to Cart", artist_path(@artwork.artist) %></a>
-                <!--<a><%= link_to "Add to Cart"%></a>  This link will display on the card of the artwork--> 
+                <div><%= link_to "Add to Cart", carts_path, method: :post %></div>
             </div>
         </div>
     </div>
