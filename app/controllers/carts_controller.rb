@@ -11,8 +11,7 @@ class CartsController < ApplicationController
     def create
         @cart = Cart.new#(cart_params)
         @cart.user_id = @current_user.id
-        @artwork = Artwork.all.find(params[:id])
-        @cart.artwork_id = @artwork.id
+        @cart.artwork_id = request.referrer.split('/').last 
         if @cart.save
             redirect_to user_path(@cart.user)
         else  
