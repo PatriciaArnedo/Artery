@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -22,13 +23,13 @@
             <li><%= link_to "Artworks", artworks_path %></li>
             <li><%= link_to "Browse Artists By Location", locations_path %></li>
             <li><%= link_to "Artist Directory", artists_path %></li>
-            <li><%= link_to "Create an Artist Account", new_artist_path %></li>
             <% if @current_user %>
               <li>Welcome <%= @current_user.username %>!</li>
               <li class="log_out"><%= link_to "Log Out", logout_path, method: :delete %></li>
             <% else %>
               <li class="login"><%= link_to "Login", new_sign_in_path %></li>
               <li class="signup"><%= link_to "Sign Up", new_user_path %></li>
+              <li><%= link_to "Create an Artist Account", new_artist_path %></li>
             <% end %>
           </ul>
         </div>

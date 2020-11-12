@@ -23,13 +23,13 @@ form {
     box-sizing: border-box;
     margin: auto 400px 250px 400px;
 }
-#username, #password, #email, #zip_code, #city_state{
+#username, #password, #email, #zip_code, #city_state, #name, #location, #bio{
     margin-left: 20px;
     margin-right: 20px;
 }
 #register {
-    background-color: #fdd835;
-    color: black;
+    background-color: black;
+    color: white;
     padding: 8px;
     margin-top: 0px
 }

@@ -1,20 +1,21 @@
-<div class="container"><h1>Shop Artworks</h1></div>
+<div class="container" id="artwork_title"><h1>Shop Artworks</h1></div>
 <div class="container">
 
 <% @artworks.shuffle.each do |artwork| %>
     <div class="row" id="artwork_row">
-    <div class="col s12 m5">
-        <div class="card">
-            <div class="card-image">
-                <%= link_to image_tag(artwork.img_url), artwork_path(artwork) %>
-                <span class="card-title"></span>
-            </div>
-            <div class="card-content">
-                <p><%= artwork.name %> by <%= artwork.artist.name %></p>
-            </div>
-            <div class="card-action">
-                <a><%= link_to "View Artwork", artwork_path(artwork) %></a>
-                <!--<a><%= link_to "Add to Cart"%></a>  This link will display on the card of the artwork--> 
+        <div class="col s12 m5">
+            <div class="card">
+                <div class="card-image">
+                    <%= link_to image_tag(artwork.img_url), artwork_path(artwork) %>
+                    <span class="card-title"></span>
+                </div>
+                <div class="card-content">
+                    <p><%= artwork.name %> by <%= artwork.artist.name %></p>
+                </div>
+                <div class="card-action">
+                    <a><%= link_to "View Artwork", artwork_path(artwork) %></a>
+                    <a><%= link_to "Add to Cart"%></a>
+                </div>
             </div>
         </div>
     </div>
