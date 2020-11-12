@@ -11,7 +11,8 @@ class CartsController < ApplicationController
     def create
         @cart = Cart.new#(cart_params)
         @cart.user_id = @current_user.id
-        @cart.artwork_id = (params[:id])
+        @artwork = Artwork.all.find(params[:id])
+        @cart.artwork_id = @artwork.id
         if @cart.save
             redirect_to user_path(@cart.user)
         else  
