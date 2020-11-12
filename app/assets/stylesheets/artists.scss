@@ -3,9 +3,19 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 #artistcard {
     display: inline-block; 
+}
+.card {
+    //display: inline-block; 
     width: 100%;
+    float: left;
 }
 #artist_row {
     display: inline-block;
     width: 100%;
 }
+
+.card-image{
+    height: 400px; /* Your height here */
+    overflow: hidden;
+}
+
