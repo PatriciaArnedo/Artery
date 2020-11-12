@@ -2,11 +2,11 @@
     <div class="container">
         <div class="input-field col s6">
             <%= f.label "User: " %><br>
-            <%= f.collection_select(:user_id, User.all, :id, :username) %><br><br>
+            <%= f.collection_select(:user_id, User.all, :id, :username, class: "browser-default") %><br><br>
         </div>
         <div class="input-field col s6">
             <%= f.label "Artwork: " %><br>
-            <%= f.collection_select(:artwork_id, Artwork.all, :id, :name) %><br><br>
+            <%= f.collection_select(:artwork_id, Artwork.all, :id, :name, class: "browser-default") %><br><br>
         </div>
         <%= f.submit "Add to Cart"%>
     </div>
