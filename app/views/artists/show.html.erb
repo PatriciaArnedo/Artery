@@ -4,11 +4,24 @@
 <p>Bio: <%= @artist.bio %></p>
 
 <h3>Artworks</h3>
-<ul>
 <% @artist.artworks.each do |artwork|%>
-    <li><%= link_to image_tag(artwork.img_url), artwork_path(artwork)%>
+    <div class="row" id="artwork_row">
+    <div class="col s12 m5">
+        <div class="card">
+            <div class="card-image">
+                <%= link_to image_tag(artwork.img_url), artwork_path(artwork)%>
+                <span class="card-title"></span>
+            </div>
+            <div class="card-content">
+                <h5><%= artwork.name %></h5>
+            </div>
+            <div class="card-action">
+                <a><%= link_to "View Artwork", artwork_path(artwork) %></a>
+            </div>
+        </div>
+    </div>
+</div>
 <% end%>
-</ul>
 <br>
 <br>
 
