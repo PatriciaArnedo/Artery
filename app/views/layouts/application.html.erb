@@ -18,7 +18,8 @@
     <header>
       <nav class="nav-wrapper blue lighten-1">
         <div>
-          <!-- <a href="#" class="brand-logo"><%= image_tag "artery_logo.png", alt: "logo" %></a> -->
+          <img class="logo" src="https://i.imgur.com/7OqCCxU.png?2" alt="logo">
+          <img src="https://i.imgur.com/HEgpMwE.png?2" alt="">
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><%= link_to "Artworks", artworks_path %></li>
             <li><%= link_to "Browse Artists By Location", locations_path %></li>
@@ -45,5 +46,16 @@
     <%= yield %>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.carousel').carousel();
+      });
+    </script>
+    <script>
+      $('.carousel.carousel-slider').carousel({
+        fullWidth: true,
+        indicators: true
+      });
+    </script>
   </body>
 </html>
