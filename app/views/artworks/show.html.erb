@@ -1,12 +1,27 @@
 <div class="container"><h1><%= @artwork.name %></h1><div>
 
-<img src=<%=@artwork.img_url%>>
+
+<div class="row" id="artwork_row">
+    <div class="col s12 m7">
+        <div class="card">
+            <div class="card-image">
+                <%= image_tag(@artwork.img_url) %>
+                <span class="card-title"></span>
+            </div>
+            <div class="card-content">
+                <p><%= @artwork.name %> by <%= @artwork.artist.name %></p>
+                <p>Medium: <%= @artwork.medium %></p>
+                <p>Size: <%= @artwork.size %></p>
+            </div>
+            <div class="card-action">
+                <a><%= link_to "Add to Cart", artist_path(@artwork.artist) %></a>
+                <!--<a><%= link_to "Add to Cart"%></a>  This link will display on the card of the artwork--> 
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <br>
 
-<p>Artist: <%= @artwork.artist.name %><p>
-<p>Medium: <%= @artwork.medium %></p>
-<p>Size: <%= @artwork.size %></p>
-
-<%= button_to "Delete Artwork", artwork_path, method: :delete %>
-<br>
-<p><%= link_to "Back to Artist Page", artist_path(@artwork.artist) %></p>
+<p><%=link_to "Back to Artist Page", artist_path(@artwork.artist) %></p>
