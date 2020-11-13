@@ -1,13 +1,32 @@
-<%= form_for @cart do |f| %>
-    <div class="container">
-        <div class="input-field col s6">
-            <%= f.label "User: " %><br>
-            <%= f.collection_select(:user_id, User.all, :id, :username, class: "browser-default") %><br><br>
-        </div>
-        <div class="input-field col s6">
-            <%= f.label "Artwork: " %><br>
-            <%= f.collection_select(:artwork_id, Artwork.all, :id, :name, class: "browser-default") %><br><br>
-        </div>
-        <%= f.submit "Add to Cart"%>
-    </div>
-<% end%>
+<%= form_tag do %>
+  <p>Address</p>
+  <label>First Name:</label>
+  <%= text_field_tag :first_name %>
+  <label>Last Name:</label>
+  <%= text_field_tag :last_name %>
+  <label>Address:</label>
+  <%= text_field_tag :address %>
+  <%= text_field_tag :address %>
+  <label>City:</label>
+  <%= text_field_tag :city %>
+  <label>State:</label>
+  <%= text_field_tag :state %>
+  <label>Zip Code:</label>
+  <%= text_field_tag :zip %>
+  <% end %>
+
+  <%= form_tag do %>
+  <p>Payment Information:</p>
+  <label>Card Number:</label>
+  <%= text_field_tag :card %>
+  <label>Expiration Date:</label>
+  <%= text_field_tag :exp %>
+  <label>CVC/CVV:</label>
+  <%= text_field_tag :cvc %>
+  <label>Postal Code:</label>
+  <%= text_field_tag :zip %>
+  <div class="waves-effect waves-light btn"><%= submit_tag "Check Out" %></div>
+  <% end %>
+
+
+

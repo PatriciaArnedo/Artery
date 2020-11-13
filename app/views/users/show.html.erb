@@ -30,9 +30,11 @@
 <% end%>
 
 <h5>Cart Total: $<%= @user.cart_total %>.00</h5> 
+<% if @user.carts !=[] %>
 <div class="container">
-    <h5 class="cart_button"><%= button_to "Check Out" %></h5>
+    <h5 class="cart_button"><%= button_to "Check Out", new_cart_path, method: :get %></h5>
 </div>
+<% end%>
 
 </div>
 
