@@ -19,8 +19,9 @@
       <div class="navbar-fixed">
         <nav class="nav-wrapper white black-text">
           <div>
-            <a href="http://localhost:3000/"><%= image_tag ''%>
-            <a href="http://localhost:3000/"><img class="logo" src="https://i.imgur.com/7OqCCxU.png?2" alt="logo"></a> 
+            <a href="http://localhost:3000/" class="logo"><%= image_tag 'rsz_2artery_banner-01'%>
+              <img src="https://i.imgur.com/7OqCCxU.png?2" alt="logo">
+            </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><%= link_to "Artworks", artworks_path %></li>
               <li><%= link_to "Browse Artists By Location", locations_path %></li>
@@ -40,10 +41,6 @@
         </nav>
       </div>
     </header>
-    <div class="container">
-      <hr>
-    </div>
-    
     <%= yield %>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

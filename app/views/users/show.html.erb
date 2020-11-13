@@ -1,6 +1,6 @@
-<div class="container"><h3>Artwork in my cart</h3></div><br>
+<div class="container" id="artwork_title"><h3>Artwork in my cart</h3><br>
+<hr class="pg_hr">
 
-<div class="container">
 <% if @user.carts ==[] %>
     <p><h5>Your cart is currently empty.</h5></p>
     <br><br><br>
@@ -22,8 +22,8 @@
       </div>
     </div>
   </div>
-  <div>
-  <%= button_to "Remove from Cart", cart_path(cart), method: :delete %>
+  <div id="btn-to">
+    <%= button_to "Remove from Cart", cart_path(cart), method: :delete %>
   </div>
 <%end %>
 <% end%>

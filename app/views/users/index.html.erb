@@ -1,10 +1,10 @@
-<div class="container"><h3>My Account</h3></div>
+<div class="container" id="artwork_title"><h3>My Account</h3>
+<hr class="pg_hr">
+<div>Username: <%= @user.username %></div><br>
+<div>Email: <%= @user.email %></div><br>
+<div>Zip Code: <%= @user.zip_code %></div><br>
 
-<div class="container">Username: <%= @user.username %></div><br>
-<div class="container">Email: <%= @user.email %></div><br>
-<div class="container">Zip Code: <%= @user.zip_code %></div><br>
-
-<div class="container"><%= link_to "Edit My Account", edit_user_path(@current_user) %></div>
+<div><%= link_to "Edit My Account", edit_user_path(@current_user) %></div>
 
 <br>
 <br>
