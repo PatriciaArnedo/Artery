@@ -5,9 +5,9 @@
 <div>Zip Code: <%= @user.zip_code %></div><br>
 
 <div><%= link_to "Edit My Account", edit_user_path(@current_user) %></div>
-
 <br>
 <br>
 <br>
 <br>
 
+<div class="left" id="delbtn"><%= button_to "Delete My Account", user_path(@current_user), method: :delete %></div>
