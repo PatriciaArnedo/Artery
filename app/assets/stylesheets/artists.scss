@@ -26,3 +26,43 @@
     margin-top: 25px;
 }
 
+#panel {
+    margin-top: 100px;
+    padding: 0px;
+}
+#loginbtn {
+    float: right;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background-color: white;;
+}
+#log_in {
+    background-color: black;
+    color: white;
+    padding: 8px;
+    margin-top: 0px
+}
+form {
+    padding:0px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    margin: auto 300px 250px 300px;
+}
+#username, #password, #email, #zip_code, #city_state, #name, #location, #bio{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#register {
+    background-color: black;
+    color: white;
+    padding: 8px;
+    margin-top: 0px
+}
+#registerbtn {
+    float: right;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+#btn-to {
+    
+}

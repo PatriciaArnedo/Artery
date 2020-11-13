@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    before_action :find_user, only: [:show, :edit, :index, :update]
+    before_action :find_user, only: [:show, :edit, :index, :update, :destroy]
     #skip_before_action :require_login, only: [:new, :create]
 
     def index
@@ -42,6 +42,11 @@ class UsersController < ApplicationController
             flash[:errors] = @user.errors.full_messages
             redirect_to edit_user_path
         end
+    end
+
+    def destroy
+        @user.destroy
+        redirect_to root_path
     end
 
 

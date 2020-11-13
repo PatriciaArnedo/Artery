@@ -28,7 +28,7 @@
               <li><%= link_to "Browse Artists By Location", locations_path %></li>
               <li><%= link_to "Artist Directory", artists_path %></li>
               <% if @current_user %>
-                <li><%= link_to "My Cart", user_path(@current_user) %></li>
+                <li><%= link_to "My Cart", my_cart_path(@current_user) %></li>
                 <li><%= link_to "My Account", users_path %></li>
                 <li>Welcome <%= @current_user.username %>!</li>
                 <li class="log_out"><%= link_to "Log Out", logout_path, method: :delete %></li>

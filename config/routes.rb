@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#home'
-  resources :users
+  resources :users, only: [:index, :edit, :update, :new, :create, :destroy] 
+  get '/users/:id', to: 'users#show', as: 'my_cart'
   resources :cart_arts
   resources :carts #, only: [:show, :destory, :new, :create, :delete]
   resources :locations
