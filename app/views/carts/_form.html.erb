@@ -1,32 +1,36 @@
-<%= form_tag do %>
-  <p>Address</p>
-  <label>First Name:</label>
-  <%= text_field_tag :first_name %>
-  <label>Last Name:</label>
-  <%= text_field_tag :last_name %>
-  <label>Address:</label>
-  <%= text_field_tag :address %>
-  <%= text_field_tag :address %>
-  <label>City:</label>
-  <%= text_field_tag :city %>
-  <label>State:</label>
-  <%= text_field_tag :state %>
-  <label>Zip Code:</label>
-  <%= text_field_tag :zip %>
-  <% end %>
+<div class="row">
+  <div class="col s12" id="panel">
+    <%= form_tag do %>
+      <p>Address</p>
+      <label>First Name:</label>
+      <%= text_field_tag :first_name %>
+      <label>Last Name:</label>
+      <%= text_field_tag :last_name %>
+      <label>Address:</label>
+      <%= text_field_tag :address %>
+      <%= text_field_tag :address %>
+      <label>City:</label>
+      <%= text_field_tag :city %>
+      <label>State:</label>
+      <%= text_field_tag :state %>
+      <label>Zip Code:</label>
+      <%= text_field_tag :zip %>
+      <% end %>
 
-  <%= form_tag do %>
-  <p>Payment Information:</p>
-  <label>Card Number:</label>
-  <%= text_field_tag :card %>
-  <label>Expiration Date:</label>
-  <%= text_field_tag :exp %>
-  <label>CVC/CVV:</label>
-  <%= text_field_tag :cvc %>
-  <label>Postal Code:</label>
-  <%= text_field_tag :zip %>
-  <div class="waves-effect waves-light btn"><%= submit_tag "Check Out" %></div>
-  <% end %>
+      <%= form_tag do %>
+      <p>Payment Information:</p>
+      <label>Card Number:</label>
+      <%= text_field_tag :card %>
+      <label>Expiration Date:</label>
+      <%= text_field_tag :exp %>
+      <label>CVC/CVV:</label>
+      <%= text_field_tag :cvc %>
+      <label>Postal Code:</label>
+      <%= text_field_tag :zip %>
+      <div class="blue lighten-2 waves-effect waves-light btn"><%= submit_tag "Check Out" %></div>
+      <% end %>
+  </div>
+</div>
 
 
 
