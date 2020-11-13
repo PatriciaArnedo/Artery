@@ -1,4 +1,4 @@
-<div class="container"><h3>Artwork in my cart</h3></div><br>
+<div class="container"><h3>Art in My Cart</h3></div><br>
 
 <div class="container">
 <% if @user.carts ==[] %>
@@ -8,7 +8,7 @@
 <% @user.carts.each do |cart| %>
   <div class="row">
     <div class="col s12 m6">
-      <div class="card">
+      <div class="card medium">
         <div class="card-image">
           <%= link_to image_tag(cart.artwork.img_url), artwork_path(cart.artwork) %>
           <span class="card-title"></span>
@@ -18,19 +18,21 @@
             <p>Medium: <%= cart.artwork.medium %></p>
             <p>Size: <%= cart.artwork.size %></p>
             <p>Price: $<%= cart.artwork.price %>0</p>
+            <%= button_to "Remove from Cart", cart_path(cart), method: :delete %>
         </div>
       </div>
     </div>
   </div>
   <div>
-  <%= button_to "Remove from Cart", cart_path(cart), method: :delete %>
   </div>
+  
 <%end %>
 <% end%>
 
 <h5>Cart Total: $<%= @user.cart_total %>.00</h5> 
-
-<%= button_to "Check Out" %>
+<div class="container">
+<h5 class="cart_button"><%= button_to "Check Out" %></h5>
+</div>
 
 </div>
 

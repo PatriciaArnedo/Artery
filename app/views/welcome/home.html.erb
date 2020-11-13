@@ -4,40 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artery</title>
-    
+    <div class = "container">
     <style>
         header {
         background: url(<%= asset_path 'artery_banner_final-01.png' %>);
         background-size: cover;
         background-position: center;
-        min-height: 500px;
+        min-height: 400px;
         width: 100%;
     }
     </style> 
+    </div>
     <link rel="stylesheet" href="stylesheets/homepage.scss">  
 </head>
 <body>
-
-    <div class="container" id="homepg_bottom_logos">
-        <%= image_tag 'rsz_1artery_banner-01' %>
-        <%= image_tag 'rsz_1artery_logo1-01' %>
+    <div class="container" >
+    <img class="responsive-img" src="https://i.imgur.com/6tUHr5j.png">
     </div>
+    <div class="container" id="welcome_title"><h1>Featured Artists</h1>
 
 
+  <div class="row">
+        <div class="col s4 m4">
+            <div class="card">
+                <div class="card-image">
+                    <%= link_to image_tag(@artwork1.img_url), artist_path(@artwork1.artist) %>
+                    <span class="card-title"></span>
+                </div>
+                <div class="card-content">
+                    <p><%= @artwork1.artist.name %></p>
+                </div>
+                <div class="card-action">
+                    <a><%= link_to "View Artist", artist_path(@artwork1.artist) %></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+        <div class="col s4 m4">
+            <div class="card">
+                <div class="card-image">
+                    <%= link_to image_tag(@artwork3.img_url), artist_path(@artwork3.artist) %>
+                    <span class="card-title"></span>
+                </div>
+                <div class="card-content">
+                    <p><%= @artwork3.artist.name %></p>
+                </div>
+                <div class="card-action">
+                    <a><%= link_to "View Artist", artist_path(@artwork3.artist) %></a>
+                </div>
+            </div>
+        </div>
+            
+
+        <div class="row">
+        <div class="col s4 m4">
+            <div class="card">
+                <div class="card-image">
+                    <%= link_to image_tag(@artwork2.img_url), artist_path(@artwork2.artist) %>
+                    <span class="card-title"></span>
+                </div>
+                <div class="card-content">
+                    <p><%= @artwork2.artist.name %></p>
+                </div>
+                <div class="card-action">
+                    <a><%= link_to "View Artist", artist_path(@artwork2.artist) %></a>
+                </div>
+            </div>
+        </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+  
 <footer>
     <div class="container">
         
