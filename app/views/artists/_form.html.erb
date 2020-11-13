@@ -1,9 +1,5 @@
 <div class="container">
-    <% if flash[:errors] %>
-        <% flash[:errors].each do |error|%>
-        <p style = 'color:red;'>  <%= error %>  </p>
-        <% end%>
-    <% end%>
+
 </div>
 
 <%= form_for @artist do |f| %>
@@ -11,6 +7,11 @@
         <div class="row">
             <div class="col s6 offset-s3 z-depth-3" id="panel">
             <h5  id="register">Create Artist Account</h5>
+                <% if flash[:errors] %>
+                    <% flash[:errors].each do |error|%>
+                    <p style = 'color:red; margin-left:20px;'>  <%= error %>  </p>
+                    <% end%>
+                <% end%>
                 <div class="input-field" id="username">
                     <%= f.label :name %>
                     <%= f.text_field :name %>
