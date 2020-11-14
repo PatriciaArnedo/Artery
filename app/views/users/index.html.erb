@@ -6,7 +6,7 @@
         <div>Username: <%= @user.username %></div><br>
         <div>Email: <%= @user.email %></div><br>
         <div>Zip Code: <%= @user.zip_code %></div><br>
-        <div><%= link_to "Edit My Account", edit_user_path(@current_user) %></div>
+        <div class="waves-effect waves-light"><%= link_to "Edit My Account", edit_user_path(@current_user) %></div>
         <div class="card-action">
         <br>
           <div><%= button_to "Delete My Account", user_path(@current_user), method: :delete %>
