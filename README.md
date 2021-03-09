@@ -1,24 +1,6 @@
-# README
+<h1>Artery</h1>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Artery is an online art marketplace where buyers can discover art by location to support local artists or have the experience of an art fair virtually.  
 
-Things you may want to cover:
+Ruby version - 2.6.1
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
